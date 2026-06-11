@@ -1,208 +1,288 @@
 :root {
-  --bg: #fafaf8;
-  --card: #ffffff;
-  --text: #1f2933;
-  --muted: #616e7c;
-  --accent: #0f6e56;
-  --accent-light: #e1f5ee;
-  --border: #e4e7eb;
-  --max: 760px;
+  --bg: #f7f4ed;
+  --surface: #fffdf8;
+  --ink: #23211b;
+  --muted: #7a7466;
+  --accent: #1e5240;
+  --gold: #a8853f;
+  --line: #e5dfd0;
+  --max: 720px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: "Hiragino Kaku Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
   background: var(--bg);
-  color: var(--text);
-  line-height: 1.9;
-  font-size: 16px;
+  color: var(--ink);
+  line-height: 2;
+  font-size: 15.5px;
+  letter-spacing: 0.02em;
+}
+
+h1, h2, h3, .site-title, .page-title {
+  font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  font-weight: 600;
 }
 
 header.site-header {
-  background: var(--card);
-  border-bottom: 1px solid var(--border);
-  padding: 18px 16px;
+  background: var(--bg);
+  padding: 40px 16px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .site-header .inner {
   max-width: var(--max);
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
 }
 
 .site-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text);
+  font-size: 27px;
+  letter-spacing: 0.22em;
+  color: var(--ink);
   text-decoration: none;
+  text-align: center;
 }
 
-.site-title span { color: var(--accent); }
+.site-title::after {
+  content: "NISA START NOTE";
+  display: block;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.46em;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+nav.global {
+  width: 100%;
+  text-align: center;
+  margin-top: 22px;
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+}
 
 nav.global a {
   color: var(--muted);
   text-decoration: none;
-  font-size: 14px;
-  margin-left: 16px;
+  font-size: 12.5px;
+  letter-spacing: 0.14em;
+  margin: 0 14px;
+  transition: color 0.2s;
 }
 
 nav.global a:hover { color: var(--accent); }
 
 main {
   max-width: var(--max);
-  margin: 32px auto 64px;
-  padding: 0 16px;
+  margin: 44px auto 80px;
+  padding: 0 18px;
+}
+
+.lead {
+  color: var(--muted);
+  text-align: center;
+  font-size: 14.5px;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-family: "Shippori Mincho", serif;
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  margin: 48px 0 6px;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 2px;
+  background: var(--gold);
+  margin: 14px auto 8px;
 }
 
 .post-list { list-style: none; }
 
 .post-list li {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  margin-bottom: 16px;
-  transition: border-color 0.15s;
+  border-bottom: 1px solid var(--line);
 }
-
-.post-list li:hover { border-color: var(--accent); }
 
 .post-list a {
   display: block;
-  padding: 20px 24px;
+  padding: 26px 6px;
   text-decoration: none;
   color: inherit;
 }
 
 .post-list .date {
-  font-size: 13px;
-  color: var(--muted);
   display: block;
-  margin-bottom: 4px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 8px;
 }
 
 .post-list .title {
   display: block;
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text);
+  font-family: "Shippori Mincho", serif;
+  font-size: 18.5px;
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--ink);
+  transition: color 0.2s;
 }
 
 .post-list .excerpt {
   display: block;
-  font-size: 14px;
+  font-size: 13.5px;
+  line-height: 1.9;
   color: var(--muted);
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
+.post-list li:hover .title { color: var(--accent); }
+
 article.post {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 32px 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 52px 48px;
 }
 
 article.post h1 {
-  font-size: 24px;
-  line-height: 1.5;
-  margin-bottom: 8px;
+  font-size: 25px;
+  line-height: 1.8;
+  margin-bottom: 14px;
 }
 
 article.post .meta {
-  font-size: 13px;
-  color: var(--muted);
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--gold);
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
 }
 
 article.post h2 {
-  font-size: 19px;
-  margin: 36px 0 12px;
-  padding-left: 12px;
-  border-left: 4px solid var(--accent);
+  font-size: 19.5px;
+  line-height: 1.7;
+  margin: 44px 0 14px;
+}
+
+article.post h2::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 2px;
+  background: var(--gold);
+  margin-bottom: 12px;
 }
 
 article.post h3 {
   font-size: 16px;
-  margin: 24px 0 8px;
+  margin: 28px 0 8px;
 }
 
-article.post p { margin-bottom: 16px; }
+article.post p { margin-bottom: 18px; }
 
 article.post ul, article.post ol {
-  margin: 0 0 16px 24px;
+  margin: 0 0 18px 22px;
 }
 
-article.post li { margin-bottom: 6px; }
+article.post li { margin-bottom: 8px; }
 
 article.post table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 16px;
-  font-size: 14px;
+  margin-bottom: 18px;
+  font-size: 13.5px;
+  line-height: 1.8;
 }
 
 article.post th, article.post td {
-  border: 1px solid var(--border);
-  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  padding: 10px 12px;
   text-align: left;
+  vertical-align: top;
 }
 
-article.post th { background: var(--accent-light); }
+article.post th {
+  background: transparent;
+  border-bottom: 2px solid var(--ink);
+  font-weight: 700;
+  white-space: nowrap;
+}
 
 .note {
-  background: var(--accent-light);
-  border-radius: 8px;
-  padding: 14px 18px;
-  font-size: 14px;
-  margin-bottom: 16px;
+  background: #f1ece0;
+  border-left: 2px solid var(--gold);
+  padding: 16px 20px;
+  font-size: 13.5px;
+  line-height: 1.9;
+  margin-bottom: 18px;
 }
 
-.disclaimer {
-  font-size: 13px;
-  color: var(--muted);
+.related {
+  border: 1px solid var(--line);
   background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px 16px;
-  margin-top: 32px;
+  padding: 18px 22px;
+  margin-top: 36px;
+  font-size: 13.5px;
+}
+
+.related a { color: var(--accent); }
+
+.disclaimer {
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 40px;
+}
+
+.ad-label {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-bottom: 18px;
 }
 
 footer.site-footer {
-  border-top: 1px solid var(--border);
-  background: var(--card);
-  padding: 24px 16px;
+  background: var(--ink);
+  padding: 30px 16px;
 }
 
 .site-footer .inner {
   max-width: var(--max);
   margin: 0 auto;
-  font-size: 13px;
-  color: var(--muted);
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #b5af9f;
+  text-align: center;
 }
 
-.site-footer a { color: var(--muted); }
+.site-footer a { color: #b5af9f; }
 
 .page-title {
-  font-size: 24px;
-  margin-bottom: 24px;
-}
-
-.lead {
-  color: var(--muted);
-  margin-bottom: 24px;
+  font-size: 23px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 28px;
 }
 
 @media (max-width: 600px) {
-  article.post { padding: 24px 18px; }
-  nav.global a { margin-left: 10px; }
+  article.post { padding: 32px 22px; }
+  .site-title { font-size: 22px; letter-spacing: 0.16em; }
+  nav.global a { margin: 0 8px; font-size: 12px; }
 }
